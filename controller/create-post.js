@@ -45,7 +45,7 @@ module.exports.CreatePost= async function(req,res){
                     })
 
                    
-                    post.avatar= "http://34.221.190.159:7789"+PostContainer.avatarPath+"/"+files.name;
+                    post.avatar= "http://34.221.190.159:7789/uploads/user"+"/"+files.name;
                 }
                
                 if(sub){ 
