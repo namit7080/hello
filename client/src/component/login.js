@@ -3,11 +3,12 @@ import { useState } from 'react';
 import styles from '../asset/css/singup.module.css'
 import Cookies from 'universal-cookie';
 import { useToasts } from 'react-toast-notifications';
+import { useCookies } from 'react-cookie';
 
 import { useNavigate } from 'react-router-dom';
 
 export const Login=(props)=>{
-
+  const [cookies, setCookie] = useCookies('');
   const[loggingIn,setLoggingIn]= useState(false);
   const {addToast}= useToasts();
   const history=useNavigate();
@@ -33,18 +34,22 @@ export const Login=(props)=>{
           e.preventDefault();
         
           const {email,password}=user;
-          const response= await fetch('/log-in',{
+          const response= await fetch('http://34.221.190.159:7789/log-in',{
             method:"POST",
             headers:{
               "Content-Type": "application/json"
             },
+            
             body: JSON.stringify({
              email,password
             })
           });
+          // console.log(response);
 
-        
+         
           const data= await response.json();
+          console.log(data);
+          setCookie('token',data.cookie);
         
          
           if(response.status===200){
