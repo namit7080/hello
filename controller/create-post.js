@@ -45,7 +45,10 @@ module.exports.CreatePost= async function(req,res){
                     })
 
                    
-                    post.avatar= "http://34.221.190.159:7789/uploads/user"+"/"+files.name;
+                    const pathimg="http://34.221.190.159:7789/uploads/user"+"/"+files.name;
+                    post.avatar= pathimg;
+                                     consol.log(post.avatar);
+                                     consol.log(pathimg);
                 }
                
                 if(sub){ 
