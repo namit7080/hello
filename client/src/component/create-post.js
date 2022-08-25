@@ -1,8 +1,9 @@
 import '../asset/css/create-post.css';
-
+import Cookies from 'universal-cookie';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
+
 
 
 
@@ -20,15 +21,17 @@ export function CreatePost(){
 
   const callPost= async()=>{
 
+    const cookies = new Cookies();
     console.log("eerrr");
       try{
-        const res= await fetch('/verify-user',{
-          method:"GET",
-          headers:{
-             Accept:"application/json",
-            "Content-Type": "application/json"
-          },
-          credentials:"include"
+        const fromdata= new FormData();
+        const c= cookies.get('token');
+        console.log(c);
+        fromdata.append('cookies',c);
+        const res= await fetch('http://34.221.190.159:7789/verify-user',{
+          method:"POST",
+           body:fromdata
+          
          });
 
         
@@ -98,10 +101,14 @@ export function CreatePost(){
   }
 
   const CreatePost= async(e)=>{
-
-    setbuttonIn(true);
     e.preventDefault();
-   const {heading,subject,fieldname,message}=user;
+    setbuttonIn(true);
+    const cookies = new Cookies();
+    const c= cookies.get('token');
+    console.log(c);
+    fromdata.append('cookies',c);
+   
+    const {heading,subject,fieldname,message}=user;
     fromdata.append('img',selectedFiles);
     fromdata.append('heading',heading);
     fromdata.append('subject',subject);
@@ -110,15 +117,16 @@ export function CreatePost(){
     fromdata.append('type',type);
     fromdata.append('hidden',hidden);
 
-    const res= await fetch('/create-post',{
+    const res= await fetch('http://34.221.190.159:7789/create-post',{
       method:"POST",
          
-      credentials:"include",
+      
       
       body: fromdata
       
     });
 
+    console.log(res);
     if(res.status===200){
       addToast("Post Created",{
         appearances:true,
