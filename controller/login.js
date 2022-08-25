@@ -8,7 +8,7 @@ module.exports.login= async function(req,res){
 
     
     const {email,password}= req.body;
-
+  
     
     if(!email||!password){
         return res.status(400).json({"error":"Ivalid Information"})
@@ -33,22 +33,24 @@ module.exports.login= async function(req,res){
 
     // Match True
     else{
-
-       const keyy=await jwt.sign(user.toJSON(),'doubt');
+      console.log(email,password);
+       const keyy=await jwt.sign(user.toJSON(),'doubt',{expiresIn: '1000000'});
       
         // user.tokens.push(keyy);
         // await user.save();
        
         res.cookie('token', keyy,{
         expiresIn:'1000000',
-        httpOnly:true
+        httpOnly:true,
+        
        });
 
        console.log("Verify");
      
       
       return res.json(200,{
-        message: "valid"
+        message: "valid",
+        cookie:keyy
     })
 
    
@@ -65,8 +67,8 @@ module.exports.login= async function(req,res){
 
 module.exports.logout= async function(req,res){
 
-
-  res.clearCookie('token');
+  
+  
   return res.json(200,{
     message: "valid"
 })
