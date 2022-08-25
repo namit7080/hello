@@ -22,7 +22,7 @@ export const Userprofile=()=>{
         const c= cookies.get('token');
         console.log(c);
         fromdata.append('cookies',c);
-        const res= await fetch('http://127.0.0.1:7789/verify-user',{
+        const res= await fetch('http://34.221.190.159:7789/verify-user',{
           method:"POST",
            body:fromdata
           
