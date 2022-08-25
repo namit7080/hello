@@ -29,7 +29,7 @@ export const Singup=()=>{
           e.preventDefault();
           
           const {username,email,profession,university,enrolled,courseyr,password}=user;
-          const response= await fetch('/register',{
+          const response= await fetch('http://34.221.190.159:7789/register',{
             method:"POST",
             headers:{
               "Content-Type": "application/json"
@@ -39,6 +39,7 @@ export const Singup=()=>{
             })
           });
 
+          console.log(response);
           
           const data= await response.json();
            
