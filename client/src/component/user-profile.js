@@ -1,4 +1,4 @@
-
+import Cookies from 'universal-cookie';
 import '../asset/css/user-profile.css'
 import { useNavigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
@@ -15,16 +15,17 @@ export const Userprofile=()=>{
   const [proffession,setprofession]= useState();
 
   const callPost= async()=>{
-
+    const cookies = new Cookies();
     console.log("eerrr");
       try{
-        const res= await fetch('/verify-user',{
-          method:"GET",
-          headers:{
-             Accept:"application/json",
-            "Content-Type": "application/json"
-          },
-          credentials:"include"
+        const fromdata= new FormData();
+        const c= cookies.get('token');
+        console.log(c);
+        fromdata.append('cookies',c);
+        const res= await fetch('http://127.0.0.1:7789/verify-user',{
+          method:"POST",
+           body:fromdata
+          
          });
 
         
