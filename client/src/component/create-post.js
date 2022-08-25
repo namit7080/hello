@@ -189,11 +189,11 @@ export function CreatePost(){
             </li>
             <li>
               <div className="grid grid-2">
-                <input type="text" placeholder="Heading" name="heading" required 
+                <input type="text" placeholder="Heading (Mandatory)" name="heading" required 
                      value={user.heading}
                      onChange={handleInputs}
                 />  
-                <input type="text" placeholder="Subject (if any) " name="subject" 
+                <input type="text" placeholder="Subject (Mandatory)" name="subject" 
                     value={user.subject}
                     onChange={handleInputs}
                 />
@@ -205,7 +205,7 @@ export function CreatePost(){
               </div>
             </li>    
             <li>
-              <textarea placeholder="Message" defaultValue={""} required name="message"
+              <textarea placeholder="Message (Mandatory)" defaultValue={""} required name="message"
                  value={user.message}
                  onChange={handleInputs}
               />
