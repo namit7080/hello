@@ -34,7 +34,7 @@ export const Login=(props)=>{
           e.preventDefault();
         
           const {email,password}=user;
-          const response= await fetch('http://34.221.190.159:7789/log-in',{
+          const response= await fetch('http://18.237.56.192:7789/log-in',{
             method:"POST",
             headers:{
               "Content-Type": "application/json"
