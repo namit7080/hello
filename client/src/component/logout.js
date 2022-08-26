@@ -18,7 +18,7 @@ const Logout=(props)=>{
             const c= cookies.get('token');
             console.log(c);
             fromdata.append('cookies',c);
-            const res= await fetch('http://34.221.190.159:7789/logout',{
+            const res= await fetch('http://18.237.56.192:7789/logout',{
               method:"POST",
               body:fromdata
              });
