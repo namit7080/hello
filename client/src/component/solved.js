@@ -32,7 +32,7 @@ export const Solved=(props)=>{
         fromdata.append("pid",array[1]);
         fromdata.append("uid",array[2]);
 
-        const response= await fetch('http://34.221.190.159:7789/solved',{
+        const response= await fetch('http://18.237.56.192:7789/solved',{
           method:"POST",
              
          
