@@ -15,7 +15,7 @@ export function Explore() {
   const callaboutPage = async () => {
     try {
       
-      const url="http://34.221.190.159:7789/explore"
+      const url="http://18.237.56.192:7789/explore"
       
       const res = await fetch(url,{method:"GET"});
 
@@ -39,7 +39,7 @@ export function Explore() {
 
   const problem = async () => {
     try {
-      const res = await fetch("http://34.221.190.159:7789/different/problem", {
+      const res = await fetch("http://18.237.56.192:7789/different/problem", {
         method: "GET",
       });
 
@@ -57,7 +57,7 @@ export function Explore() {
 
   const career = async () => {
     try {
-      const res = await fetch("http://34.221.190.159:7789/different/carrer", {
+      const res = await fetch("http://18.237.56.192:7789/different/carrer", {
         method: "GET",
       });
 
@@ -75,7 +75,7 @@ export function Explore() {
 
   const study = async () => {
     try {
-      const res = await fetch("http://34.221.190.159:7789/different/study-guide", {
+      const res = await fetch("http://18.237.56.192:7789/different/study-guide", {
         method: "GET",
       });
 
@@ -93,7 +93,7 @@ export function Explore() {
 
   const gd = async () => {
     try {
-      const res = await fetch("http://34.221.190.159:7789/different/gd", {
+      const res = await fetch("http://18.237.56.192:7789/different/gd", {
         method: "GET",
       });
 
@@ -111,7 +111,7 @@ export function Explore() {
 
   const feedback = async () => {
     try {
-      const res = await fetch("http://34.221.190.159:7789/different/feedback", {
+      const res = await fetch("http://18.237.56.192:7789/different/feedback", {
         method: "GET",
       });
 
@@ -144,7 +144,7 @@ export function Explore() {
         fromdata.append('cookies',c);
        fromdata.append('id',b);
   
-    const response= await fetch('http://34.221.190.159:7789/upvote',{
+    const response= await fetch('http://18.237.56.192:7789/upvote',{
       method:"POST",
              
      
@@ -181,7 +181,7 @@ export function Explore() {
    
      fromdata.append('id',b);
   
-    const response= await fetch('http://34.221.190.159:7789/downvote',{
+    const response= await fetch('http://18.237.56.192:7789/downvote',{
       method:"POST",
              
      
