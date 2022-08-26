@@ -28,7 +28,7 @@ export function CreatePost(){
         const c= cookies.get('token');
         console.log(c);
         fromdata.append('cookies',c);
-        const res= await fetch('http://34.221.190.159:7789/verify-user',{
+        const res= await fetch('http://18.237.56.192:7789/verify-user',{
           method:"POST",
            body:fromdata
           
@@ -117,7 +117,7 @@ export function CreatePost(){
     fromdata.append('type',type);
     fromdata.append('hidden',hidden);
 
-    const res= await fetch('http://34.221.190.159:7789/create-post',{
+    const res= await fetch('http://18.237.56.192:7789/create-post',{
       method:"POST",
          
       
