@@ -20,7 +20,7 @@ const EachPost=(props)=>{
         const c= cookies.get('token');
         console.log(c);
         fromdata.append('cookies',c);
-        const res= await fetch('http://34.221.190.159:7789/verify-user',{
+        const res= await fetch('http://18.237.56.192:7789/verify-user',{
           method:"POST",
            body:fromdata
           
@@ -85,7 +85,7 @@ const EachPost=(props)=>{
             
             
             console.log(postId);
-            const res= await fetch('http://34.221.190.159:7789/explore-post',{
+            const res= await fetch('http://18.237.56.192:7789/explore-post',{
               method:"POST",
               headers:{
                 "Content-Type": "application/json"
@@ -159,7 +159,7 @@ const EachPost=(props)=>{
       console.log(comment);
       fromdata.append('cookies',c);
 
-      const res= await fetch('http://34.221.190.159:7789/create-comment',{
+      const res= await fetch('http://18.237.56.192:7789/create-comment',{
         method:"POST",
            
         
