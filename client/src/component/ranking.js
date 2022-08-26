@@ -7,7 +7,7 @@ export const Rank=()=>{
   const [loading,setLoading]= useState([true]); 
     const [user,setUser1]= useState([]);
     const call=async ()=>{
-        const response= await fetch('http://34.221.190.159:7789/ranking',{
+        const response= await fetch('http://18.237.56.192:7789/ranking',{
           method:"GET"
         })
 
